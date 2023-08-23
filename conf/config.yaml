@@ -1,0 +1,23 @@
+scaffold: { }
+redis:
+  default:
+    psm: "wuyuhang.redis.default"
+    host: "127.0.0.1"
+    port: 6379
+    password: "123456"
+    conn_timeout: 100
+    read_timeout: 100
+    write_timeout: 100
+    pool_timeout: 100
+    pool_size: 100
+    pool_init_size: 10
+
+caches:
+  - id: cache:redis
+    type: redis
+    ttl: 24h
+    prefix: cache:redis
+  - id: cache:memory
+    type: memory
+    ttl: 24h
+    prefix: cache:memory
